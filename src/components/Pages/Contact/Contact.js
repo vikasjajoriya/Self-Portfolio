@@ -138,7 +138,7 @@ export default function Contact({ backgroundColor }) {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
-          {msgName ? <div style={{color:"red"}}>{msgName}</div> :" "}
+          {msgName ? <div className="error-msg" style={{color:"red"}}>{msgName}</div> :" "}
           <lable className="label">Your Email Address:</lable>
           <input
             type="text"
@@ -147,7 +147,7 @@ export default function Contact({ backgroundColor }) {
               setFormData({ ...formData, email: e.target.value })
             }
           />
-          {msgEmail ? <div style={{color:"red"}}>{msgEmail}</div> :" "}
+          {msgEmail ? <div className="error-msg" style={{color:"red"}}>{msgEmail}</div> :" "}
           <lable className="label">How can I Help you ?</lable>
           <textarea
             rows="2"
@@ -156,7 +156,7 @@ export default function Contact({ backgroundColor }) {
               setFormData({ ...formData, message: e.target.value })
             }
           />
-          {msg ? <div style={{color:"red"}}>{msg}</div> :" "}
+          {msg ? <div className="error-msg" style={{color:"red"}}>{msg}</div> :" "}
           <button type="submit">
             Send{" "}
             <span>
