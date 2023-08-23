@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Self-Portfolio/static/css/main.73257bd2.css",
+    "main.js": "/Self-Portfolio/static/js/main.9f3105f7.js",
+    "static/media/Vikas CV.pdf": "/Self-Portfolio/static/media/Vikas CV.dcc2378fa3e874f3f886.pdf",
+    "static/media/selfImage.jpg": "/Self-Portfolio/static/media/selfImage.0b3174dc08d57053af19.jpg",
+    "index.html": "/Self-Portfolio/index.html",
+    "main.73257bd2.css.map": "/Self-Portfolio/static/css/main.73257bd2.css.map",
+    "main.9f3105f7.js.map": "/Self-Portfolio/static/js/main.9f3105f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73257bd2.css",
+    "static/js/main.9f3105f7.js"
+  ]
+}
