@@ -1,0 +1,27 @@
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Create custom scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+/* Create custom scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+}
+
+/* Set custom scrollbar width and height */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 100px !important;
+}

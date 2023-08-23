@@ -1,0 +1,110 @@
+.setting {
+  position: relative;
+  z-index: 1;
+
+  .set {
+    position: fixed;
+    top: 120px;
+    background: #000000;
+    color: white;
+    width: 40px;
+    border-radius: 5px 0 0 5px;
+    right: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+
+    span {
+      font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: 160px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 5px;
+    padding: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 1;
+
+    .menu-item {
+      cursor: pointer;
+      background: #FFE715;
+      margin: 5px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #FFE715;
+        opacity: 1;
+        transform: scale(1.2);
+        transition: all 0.3s ease-in;
+      }
+    }
+    .menu-item2 {
+      cursor: pointer;
+      background: #77ff00;
+      margin: 5px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #77ff00;
+        opacity: 1;
+        transform: scale(1.2);
+        transition: all 0.3s ease-in;
+      }
+    }
+    .menu-item3 {
+      cursor: pointer;
+      background: #01FFFF;
+      margin: 5px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #01FFFF;
+        opacity: 1;
+        transform: scale(1.2);
+        transition: all 0.3s ease-in;
+      }
+    }
+    .menu-item4 {
+      cursor: pointer;
+      background: #C84B31;
+      margin: 5px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #C84B31;
+        transform: scale(1.2);
+        transition: all 0.3s ease-in;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.rotated {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}

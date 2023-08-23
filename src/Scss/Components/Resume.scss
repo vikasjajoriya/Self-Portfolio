@@ -1,0 +1,189 @@
+:root {
+  --heading-background-color: #f8adad;
+  --heading-after-background-color: #f8adad;
+}
+.resume {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  position: relative;
+  top: 130px;
+  z-index: -1;
+  width: 100%;
+
+  .resume-heading {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+
+    & h4 {
+      background-color: #f8adad;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 100;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 40px;
+      font-weight: 700;
+    }
+  }
+
+  .resume-details {
+    display: flex;
+    padding: 10px 0px;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 85%;
+    .my-qualification {
+      margin: 10px 20px;
+      // width: 50%;
+
+      .qual-line {
+        position: relative;
+        height: 60%;
+        &::before {
+          content: "";
+          width: 3px;
+          border-radius: 5px;
+          height: 100% !important;
+          position: absolute;
+          background: var(--heading-after-background-color);
+          z-index: 1;
+          top: 0;
+          left: -10px;
+        }
+      }
+      .qual-1 h3,
+      .qual-2 h3,
+      .qual-3 h3 {
+        margin: 10px 0px;
+      }
+
+      .qual-1 hr,
+      .qual-2 hr,
+      .qual-3 hr {
+        margin: 20px 0px;
+      }
+      .qual-1 p,
+      .qual-2 p,
+      .qual-3 p {
+        text-align: justify;
+      }
+    }
+
+    .my-experience {
+      margin: 10px 20px;
+      // width: 50%;
+
+      .qual-line {
+        position: relative;
+        height: 60%;
+        &::before {
+          content: "";
+          width: 3px;
+          border-radius: 5px;
+          height: 100% !important;
+          position: absolute;
+          background: var(--heading-after-background-color);
+          z-index: 1;
+          top: 0;
+          left: -10px;
+        }
+      }
+
+      // .qual-1 h2,
+      // .qual-2 h2,
+      // .qual-3 h2 {
+      //   margin: 10px 0px;
+      // }
+
+      .qual-1 h3,
+      .qual-2 h3,
+      .qual-3 h3 {
+        margin: 10px 0px;
+      }
+
+      .qual-1 hr,
+      .qual-2 hr,
+      .qual-3 hr {
+        margin: 20px 0px;
+      }
+      .qual-1 p,
+      .qual-2 p,
+      .qual-3 p {
+        text-align: justify;
+      }
+    }
+  }
+
+  .down-button {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border: 2px solid #000000;
+    width: 105px;
+    height: 30px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.7s ease;
+
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      background-color: white;
+      color: black;
+      border: 2px solid #080808;
+      transition: all 0.7s ease;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .resume-heading h2 {
+    font-size: 20px !important;
+  }
+  .resume-details {
+    display: flex !important;
+    flex-direction: column !important;
+    width: auto !important;
+  }
+  .qual-1 h2,
+  .qual-2 h2,
+  .qual-3 h2 {
+    font-size: 20px !important;
+  }
+  .qual-1 h3,
+  .qual-2 h3,
+  .qual-3 h3 {
+    font-size: 15px !important;
+  }
+  .qual-1 p,
+  .qual-2 p,
+  .qual-3 p {
+    font-size: 12px !important;
+  }
+  .down-button{
+    font-size: 14px;
+  }
+  .my-experience h1,
+  .my-qualification h1{
+    font-size: 25px;
+  }
+}
