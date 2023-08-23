@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../../../Scss/Components/Skills.scss";
+import "../../../Scss/Components/Skills.scss"
 import { motion, useAnimation } from "framer-motion";
 export default function Skills({ accentColor, backgroundColor }) {
   const controls = useAnimation();

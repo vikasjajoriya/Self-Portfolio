@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../../../Scss/Components/About.scss";
 import { motion, useAnimation } from "framer-motion";
 
 export default function About({ backgroundColor, borderColor }) {

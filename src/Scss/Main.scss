@@ -1,10 +1,14 @@
+// Importing variables
+@import "./Abstract/Variables.scss";
 // Importing Main scss file 
 @import "../../src/App.scss";
 // Importing Components 
 @import "../Scss/Components/About.scss";
-@import "../Scss/Components/About.scss";
-@import "../Scss/Components/About.scss";
-@import "../Scss/Components/About.scss";
-@import "../Scss/Components/About.scss";
-@import "../Scss/Components/About.scss";
+@import "../Scss/Components/Contact.scss";
+@import "../Scss/Components/Home.scss";
+@import "../Scss/Components/Navbar.scss";
+@import "../Scss/Components/Resume.scss";
+@import "../Scss/Components/Setting.scss";
+@import "../Scss/Components/Skills.scss";
+
 

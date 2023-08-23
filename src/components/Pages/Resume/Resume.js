@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../../../Scss/Components/Resume.scss";
 import CV from "../../../SelfData/Vikas CV.pdf";
 import { motion, useAnimation } from "framer-motion";
 

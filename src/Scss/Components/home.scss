@@ -1,10 +1,10 @@
+@import "../Abstract/Variables.scss";
 :root {
-  --heading-background-color: #f8adad; // Replace with your default color
-  --heading-after-background-color: #f8adad; // Add this line
+  --heading-background-color: $headingBackgroundColor;
+  --heading-after-background-color: $headingBackgroundColor; 
 }
-
 .home {
-  background-color: #f8adad;
+  background-color: $headingBackgroundColor;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 70%;
-    border: 5px solid white;
+    border: 5px solid $defaultWhite;
     border-radius: 60%;
   }
 
@@ -73,16 +73,16 @@
 
   .bounce {
     display: inline-block;
-    background-color: #f8adad;
+    background-color: $headingBackgroundColor;
     font-size: 40px;
     text-align: center;
-    color: #000000 !important;
+    color: $defaultBlack !important;
     border-radius: 20px;
     padding: 5px 7px 14px;
     margin: 0 auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    border: 1px solid #000000;
-    opacity: 0.7;
+    box-shadow: 0 2px $defaultBlack;
+    border: 1px solid $defaultBlack;
+    opacity: 0.5;
     transition: all 0.3s ease-in-out;
     position: relative;
     top: 0;
@@ -98,7 +98,7 @@
   @keyframes bounce {
     0% {
       top: 0;
-      color: #fff;
+      color: $defaultWhite;
     }
     100% {
       top: 20px;
@@ -119,7 +119,7 @@
     width: 100%;
     height: 100%;
     background: var(--heading-after-background-color);
-    border-left: 5px solid rgb(0, 0, 0);
+    border-left: 5px solid $defaultBlack;
     animation: typing 4s steps(10) infinite;
   }
 

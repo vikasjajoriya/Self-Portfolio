@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TiArrowRightThick } from "react-icons/ti";
 import { BsInstagram, BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
-import "../../../Scss/Components/Contact.scss";
 import { motion, useAnimation } from "framer-motion";
 
 export default function Contact({ backgroundColor }) {

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "../../../Scss/Components/home.scss";
 import Image from "../../../SelfData/selfImage.jpg";
 
 export default function Home({ backgroundColor }) {

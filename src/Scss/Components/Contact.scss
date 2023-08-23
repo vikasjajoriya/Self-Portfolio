@@ -1,6 +1,7 @@
+@import "../Abstract/Variables.scss";
 .contact {
   display: flex;
-  background-color: #f8adad;
+  background-color: $headingBackgroundColor;
   position: relative;
   top: 160px;
   padding: 0px 105px;
@@ -26,7 +27,7 @@
   }
 
   &-left p {
-    font-size: 25px;
+    font-size: 22px;
     margin: 20px 0px;
     text-align: justify;
     padding-right: 70px;
@@ -60,13 +61,13 @@
     align-items: center;
 
     a {
+      color: $defaultGrey;
       margin-right: 15px;
-      color: #000000;
       font-size: 25px;
       transition: all 0.7s ease-out;
-
+      
       &:hover {
-        color: #ffffff;
+        color: $defaultBlack;
         transition: all 0.7s ease-out;
       }
     }
@@ -94,8 +95,8 @@
       margin: 20px 0px;
       width: 120px;
       height: 40px;
-      background-color: #2b2d2e;
-      color: white;
+      background-color: $contactButton;
+      color: $defaultWhite;
       border: none;
       display: flex;
       flex-direction: row;
@@ -104,7 +105,7 @@
       justify-content: center;
       font-size: 20px;
       font-weight: 500;
-      border: 2px solid #2b2d2e;
+      border: 2px solid $contactButton;
       transition: all 0.5s ease;
       cursor: pointer;
 
@@ -116,7 +117,7 @@
 
       &:hover {
         background-color: #424649;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: $HovercontactButton;
         transition: all 0.5s ease;
       }
     }
@@ -125,9 +126,10 @@
     textarea {
       border: none;
       outline: none;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+      border-bottom: $borderBottomInput;
       background-color: transparent;
       font-size: 30px;
+      color: $defaultGrey;
     }
   }
 }

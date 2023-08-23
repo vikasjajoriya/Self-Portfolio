@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../../Scss/Components/Navbar.scss";
 import { CiInstagram } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 

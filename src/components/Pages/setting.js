@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../Scss/Components/setting.scss";
 import { AiFillSetting } from "react-icons/ai";
 import Home from "./Home/Home";
 import Navbar from "./Navbar/Navbar";
