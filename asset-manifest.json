@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Self-Portfolio/static/css/main.d4fb83e6.css",
-    "main.js": "/Self-Portfolio/static/js/main.8bd02e00.js",
-    "static/media/Vikas CV.pdf": "/Self-Portfolio/static/media/Vikas CV.dcc2378fa3e874f3f886.pdf",
+    "main.css": "/Self-Portfolio/static/css/main.0d665973.css",
+    "main.js": "/Self-Portfolio/static/js/main.5628daad.js",
+    "static/media/Vikas CV.pdf": "/Self-Portfolio/static/media/Vikas CV.17c0cfba387537b38a10.pdf",
     "static/media/selfImage.jpg": "/Self-Portfolio/static/media/selfImage.0b3174dc08d57053af19.jpg",
     "index.html": "/Self-Portfolio/index.html",
-    "main.d4fb83e6.css.map": "/Self-Portfolio/static/css/main.d4fb83e6.css.map",
-    "main.8bd02e00.js.map": "/Self-Portfolio/static/js/main.8bd02e00.js.map"
+    "main.0d665973.css.map": "/Self-Portfolio/static/css/main.0d665973.css.map",
+    "main.5628daad.js.map": "/Self-Portfolio/static/js/main.5628daad.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4fb83e6.css",
-    "static/js/main.8bd02e00.js"
+    "static/css/main.0d665973.css",
+    "static/js/main.5628daad.js"
   ]
 }
