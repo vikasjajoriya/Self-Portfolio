@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { TiArrowRightThick } from "react-icons/ti";
 import { BsInstagram, BsFacebook, BsLinkedin, BsGithub } from "react-icons/bs";
 import { motion, useAnimation } from "framer-motion";
+import { toast } from 'react-toastify';
 
 export default function Contact({ backgroundColor }) {
   const controls = useAnimation();
@@ -10,9 +11,9 @@ export default function Contact({ backgroundColor }) {
     email: "",
     message: "",
   });
-  const[msgName,setMsgName]=useState("");
-  const[msgEmail,setMsgEmail]=useState("");
-  const[msg,setMsg]=useState("");
+  const [msgName, setMsgName] = useState("");
+  const [msgEmail, setMsgEmail] = useState("");
+  const [msg, setMsg] = useState("");
 
 
   useEffect(() => {
@@ -33,28 +34,41 @@ export default function Contact({ backgroundColor }) {
     };
   }, [controls]);
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, message } = formData;
-    setFormData({ name: "", email: "", message: "" });
-
-
-  // Validate the name
-  if (formData.name.length < 3 ) {
+    // Validate the name
+    if (formData.name.length < 3) {
       setMsgName("Please enter a name with at least 3 characters.");
       // return;
-  }
+    }
     // Validate the email address
     if (!/^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/.test(formData.email)) {
       setMsgEmail("Please enter a valid email address.");
       // return;
-  }
-  // Validate the message length
-  if (formData.message.length < 10) {
+    }
+    // Validate the message length
+    if (formData.message.length < 10) {
       setMsg("Please enter a message with at least 10 characters.")
       // return;
-  }
-    console.log("Form submitted:", formData);
+    }
+    try {
+      await fetch('https://formspree.io/mnqegyvy', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      toast.success('Email sent successfully');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast.error('Error sending message !!!');
+    }
+    // Reset validation messages
+    setMsgName("");
+    setMsgEmail("");
+    setMsg("");
   };
   return (
     <div className="contact" id="contact" style={{ backgroundColor }}>
@@ -94,7 +108,7 @@ export default function Contact({ backgroundColor }) {
             initial={{ opacity: 0, y: 25 }}
             animate={controls}
             transition={{ duration: 0.5, delay: 0.8 }}
-            href="https://www.instagram.com/its_v_i_k_k_i/"
+            href="https://www.instagram.com/ig_v.i.k.k.i/"
             target="_blank"
           >
             <BsInstagram />
@@ -131,14 +145,14 @@ export default function Contact({ backgroundColor }) {
       <div className="contact-right">
         <h1>Let's Talk</h1>
         <form className="contact-form" onSubmit={handleSubmit}>
-          <lable className="label">What is Your Name:</lable>
+          <lable className="label">Your Name:</lable>
           <input
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
-          {msgName ? <div className="error-msg" style={{color:"red"}}>{msgName}</div> :" "}
-          <lable className="label">Your Email Address:</lable>
+          {msgName ? <div className="error-msg" style={{ color: "red" }}>{msgName}</div> : " "}
+          <lable className="label">Your Email :</lable>
           <input
             type="text"
             value={formData.email}
@@ -146,7 +160,7 @@ export default function Contact({ backgroundColor }) {
               setFormData({ ...formData, email: e.target.value })
             }
           />
-          {msgEmail ? <div className="error-msg" style={{color:"red"}}>{msgEmail}</div> :" "}
+          {msgEmail ? <div className="error-msg" style={{ color: "red" }}>{msgEmail}</div> : " "}
           <lable className="label">How can I Help you ?</lable>
           <textarea
             rows="2"
@@ -155,13 +169,23 @@ export default function Contact({ backgroundColor }) {
               setFormData({ ...formData, message: e.target.value })
             }
           />
-          {msg ? <div className="error-msg" style={{color:"red"}}>{msg}</div> :" "}
-          <button type="submit">
-            Send{" "}
-            <span>
-              <TiArrowRightThick />
-            </span>
-          </button>
+          {msg ? <div className="error-msg" style={{ color: "red" }}>{msg}</div> : " "}
+          {
+            (!formData.email && !formData.name && !formData.message) ?
+              <button type="submit" disabled>
+                Send{" "}
+                <span>
+                  <TiArrowRightThick />
+                </span>
+              </button>:
+              <button type="submit" >
+              Send{" "}
+              <span>
+                <TiArrowRightThick />
+              </span>
+            </button>
+          }
+
         </form>
       </div>
     </div>
