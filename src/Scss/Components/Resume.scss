@@ -13,7 +13,7 @@
   padding: 20px;
   background-color: #f8f9fa;
   position: relative;
-  top: 130px;
+  top: 70px;
   z-index: -1;
   width: 100%;
 
@@ -45,7 +45,7 @@
 
   .resume-details {
     display: flex;
-    padding: 10px 0px;
+    padding: 10px 78px;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
@@ -88,7 +88,7 @@
         text-align: justify;
       }
     }
-
+    
     .my-experience {
       margin: 10px 20px;
       // width: 50%;
@@ -167,6 +167,7 @@
     display: flex !important;
     flex-direction: column !important;
     width: auto !important;
+    padding: 10px 20px 10px 0px !important;
   }
   .qual-1 h2,
   .qual-2 h2,
@@ -189,5 +190,12 @@
   .my-experience h1,
   .my-qualification h1{
     font-size: 25px;
+  }
+}
+
+@media (max-width: 1075px) {
+  .resume {
+      top: 115px !important;
+      display: block;
   }
 }

@@ -49,10 +49,10 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="p-details"
           >
-            I'm a frontend developer with One year of experience in building web
+            I'm a React developer with 1.10 year of experience in building web
             applications. I'm passionate about creating beautiful and intuitive
             user interfaces that provide an enjoyable user experience. In my
-            current role at Neuronimbus Software Pvt. Ltd.
+            current role at Neuronimbus Software Services Pvt. Ltd.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -76,8 +76,8 @@ export default function About({ backgroundColor, borderColor }) {
         </div>
         <div className="my-age" style={{ backgroundColor }}>
           <div className="age-1">
-            <h1>24</h1>
-            <h2>Year's old</h2>
+            <h1>26</h1>
+            <h2 className="text-nowrap">Year's old</h2>
           </div>
         </div>
       </div>

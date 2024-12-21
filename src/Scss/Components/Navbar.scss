@@ -27,6 +27,7 @@
     text-decoration: none;
     list-style: none;
     font-size: 30px;
+    font-family: auto;
   }
 
   .blob {
@@ -51,6 +52,8 @@
       justify-content: center;
       align-items: center;
       list-style: none;
+    font-family: auto;
+
 
       .links-a {
         color: $defaultGrey;

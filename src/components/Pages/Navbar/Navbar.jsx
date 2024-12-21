@@ -16,7 +16,7 @@ export default function Navbar({ backgroundColor }) {
       </a>
       <div className="blob" style={{ backgroundColor }}></div>
       <div className="navbar-links">
-        <ul>
+        <ul className="mb-0">
           <li>
             <a
               href="#home"
@@ -65,14 +65,14 @@ export default function Navbar({ backgroundColor }) {
         </ul>
       </div>
       <div className="social-links">
-        <ul>
+        <ul className="mb-0">
           <li>
-            <a href="https://www.instagram.com/its_v_i_k_k_i/" className="social-a" target="_blank">
+            <a href="https://www.instagram.com/ig_v.i.k.k.i/" className="social-a" target="_blank">
               <CiInstagram size={30}/>
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/login/" className="social-a" target="_blank">
+            <a href="https://www.facebook.com/vikas.jajoriya.507/" className="social-a" target="_blank">
               <CiFacebook size={30} />
             </a>
           </li>

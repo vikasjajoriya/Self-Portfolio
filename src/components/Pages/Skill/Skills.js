@@ -69,7 +69,7 @@ export default function Skills({ accentColor, backgroundColor }) {
           className="progress-1"
         >
           <div className="html">
-            <span>REACT-JS</span>
+            <span>JS</span>
             <span>70%</span>
           </div>
           <progress id="file" value="70" max="100" style={{ accentColor }} />
@@ -81,7 +81,7 @@ export default function Skills({ accentColor, backgroundColor }) {
           className="progress-1"
         >
           <div className="html">
-            <span>BOOTSTRAP</span>
+            <span>React JS & Next JS</span>
             <span>85%</span>
           </div>
           <progress id="file" value="85" max="100" style={{ accentColor }} />
@@ -94,9 +94,9 @@ export default function Skills({ accentColor, backgroundColor }) {
         >
           <div className="html">
             <span>RESPONSIVE DESIGN</span>
-            <span>65%</span>
+            <span>80%</span>
           </div>
-          <progress id="file" value="65" max="100" style={{ accentColor }} />
+          <progress id="file" value="80" max="100" style={{ accentColor }} />
         </motion.div>
       </div>
     </div>

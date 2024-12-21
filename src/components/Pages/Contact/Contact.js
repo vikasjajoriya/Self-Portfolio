@@ -11,11 +11,12 @@ export default function Contact({ backgroundColor }) {
     email: "",
     message: "",
   });
-  const [msgName, setMsgName] = useState("");
-  const [msgEmail, setMsgEmail] = useState("");
-  const [msg, setMsg] = useState("");
-
-
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formDisable, setFormDisable] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -35,40 +36,66 @@ export default function Contact({ backgroundColor }) {
   }, [controls]);
 
 
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {
+      name: "",
+      email: "",
+      message: "",
+    };
+
+    if (formData.name.length < 3) {
+      newErrors.name = "Please enter a name with at least 3 characters.";
+      isValid = false;
+    }
+
+    if (!/^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    if (formData.message.length < 10) {
+      newErrors.message = "Please enter a message with at least 10 characters.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Validate the name
-    if (formData.name.length < 3) {
-      setMsgName("Please enter a name with at least 3 characters.");
-      // return;
-    }
-    // Validate the email address
-    if (!/^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/.test(formData.email)) {
-      setMsgEmail("Please enter a valid email address.");
-      // return;
-    }
-    // Validate the message length
-    if (formData.message.length < 10) {
-      setMsg("Please enter a message with at least 10 characters.")
-      // return;
+    setFormDisable(false);
+    if (!validateForm()) {
+      return;
     }
     try {
-      await fetch('https://formspree.io/mnqegyvy', {
-        method: 'POST',
+      const formspreeEndpoint = `https://formspree.io/${process.env.REACT_APP_FORMSPREE_TOKEN}`;
+      const response = await fetch(formspreeEndpoint, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
-      toast.success('Email sent successfully');
-      setFormData({ name: '', email: '', message: '' });
+
+      if (response.ok) {
+        setFormDisable(true);
+        toast.success("Email sent successfully");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => {
+          setFormDisable(false);
+        }, 2000);
+      } else {
+        setFormDisable(false);
+
+        toast.error("Failed to send email. Please try again.");
+      }
     } catch (error) {
-      toast.error('Error sending message !!!');
+      setFormDisable(false);
+      toast.error("Error sending message!");
     }
-    // Reset validation messages
-    setMsgName("");
-    setMsgEmail("");
-    setMsg("");
   };
   return (
     <div className="contact" id="contact" style={{ backgroundColor }}>
@@ -117,7 +144,7 @@ export default function Contact({ backgroundColor }) {
             initial={{ opacity: 0, y: 25 }}
             animate={controls}
             transition={{ duration: 0.5, delay: 1.0 }}
-            href="https://www.facebook.com/login/"
+            href="https://www.facebook.com/vikas.jajoriya.507/"
             target="_blank"
           >
             <BsFacebook />
@@ -145,47 +172,40 @@ export default function Contact({ backgroundColor }) {
       <div className="contact-right">
         <h1>Let's Talk</h1>
         <form className="contact-form" onSubmit={handleSubmit}>
-          <lable className="label">Your Name:</lable>
+          <label className="label">Your Name:</label>
           <input
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
-          {msgName ? <div className="error-msg" style={{ color: "red" }}>{msgName}</div> : " "}
-          <lable className="label">Your Email :</lable>
+          {errors.name && <div className="error-msg" style={{ color: "red" }}>{errors.name}</div>}
+
+          <label className="label">Your Email :</label>
           <input
             type="text"
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
-          {msgEmail ? <div className="error-msg" style={{ color: "red" }}>{msgEmail}</div> : " "}
-          <lable className="label">How can I Help you ?</lable>
+          {errors.email && <div className="error-msg" style={{ color: "red" }}>{errors.email}</div>}
+
+          <label className="label">How can I help you?</label>
           <textarea
             rows="2"
             value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           />
-          {msg ? <div className="error-msg" style={{ color: "red" }}>{msg}</div> : " "}
-          {
-            (!formData.email && !formData.name && !formData.message) ?
-              <button type="submit" disabled>
-                Send{" "}
-                <span>
-                  <TiArrowRightThick />
-                </span>
-              </button>:
-              <button type="submit" >
+          {errors.message && <div className="error-msg" style={{ color: "red" }}>{errors.message}</div>}
+
+          <button type="submit" disabled={formDisable}>
+            {!formDisable ? <>
               Send{" "}
               <span>
                 <TiArrowRightThick />
               </span>
-            </button>
-          }
-
+            </>
+              : "Sending"
+            }
+          </button>
         </form>
       </div>
     </div>
