@@ -5,6 +5,9 @@ import { motion, useAnimation } from "framer-motion";
 import { toast } from 'react-toastify';
 
 export default function Contact({ backgroundColor }) {
+
+  console.log("process.env.REACT_APP_FORMSPREE_TOKEN",process.env.REACT_APP_FORMSPREE_TOKEN);
+  
   const controls = useAnimation();
   const [formData, setFormData] = useState({
     name: "",
