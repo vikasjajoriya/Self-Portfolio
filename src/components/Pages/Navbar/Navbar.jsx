@@ -14,7 +14,7 @@ export default function Navbar({ backgroundColor }) {
       <a href="/" className="navbar-a animate__animated  animate__slideInLeft">
         Portfolio
       </a>
-      <div className="blob" style={{ backgroundColor }}></div>
+{/*       <div className="blob" style={{ backgroundColor }}></div> */}
       <div className="navbar-links">
         <ul className="mb-0">
           <li>
