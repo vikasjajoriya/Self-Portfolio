@@ -9,7 +9,7 @@ export default function Home({ backgroundColor }) {
         <div className="cd-flex">
         <div className="my-details">
           <h3>Hi, I'm a Vikas</h3>
-          <h2 >React Developer</h2>
+          <h2 >React Js Developer</h2>
         </div>
           <div className="down-arrow" >
             <a href="#contact" className="bounce" style={{ backgroundColor }}>
