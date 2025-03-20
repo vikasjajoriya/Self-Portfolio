@@ -49,10 +49,7 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="p-details"
           >
-            I'm a React developer with 1.10 year of experience in building web
-            applications. I'm passionate about creating beautiful and intuitive
-            user interfaces that provide an enjoyable user experience. In my
-            current role at Neuronimbus Software Services Pvt. Ltd.
+            I am a results-driven Frontend Developer with 2 years of experience in designing and developing high-performance, scalable web applications. My expertise lies in React, Next.js, JavaScript, Context API, and REST API, where I focus on delivering optimized, user-centric solutions that enhance digital experiences.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -60,9 +57,7 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="p-details"
           >
-            In my free time, I like to play online games and creating awesome
-            user interface and I also enjoy contributing to open source projects
-            and attending local tech meetups.
+          Beyond coding, I enjoy playing online games, contributing to open-source projects, and attending tech meetups to stay updated with the latest industry trends.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -70,8 +65,7 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="p-details"
           >
-            I'm excited to continue growing my skills and experience as a
-            frontend developer. Thank you for considering my application!
+          Feel free to connect with me for collaborations or discussions on exciting web technologies! 🚀
           </motion.p>
         </div>
         <div className="my-age" style={{ backgroundColor }}>
