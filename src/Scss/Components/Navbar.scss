@@ -1,7 +1,9 @@
 @import "../Abstract/Variables.scss";
+
 :root {
   --hover-color: $headingBackgroundColor; // Replace with your default color
 }
+
 .navbar {
   position: fixed;
   display: flex;
@@ -52,8 +54,7 @@
       justify-content: center;
       align-items: center;
       list-style: none;
-    font-family: auto;
-
+      font-family: auto;
 
       .links-a {
         color: $defaultGrey;
@@ -61,11 +62,12 @@
         text-decoration: none;
         list-style: none;
         transition: all 0.3s ease-in;
+
         &:hover {
-          color:$defaultBlack;          
+          color: $defaultBlack;
           transition: all 0.3s ease-in;
+        }
       }
-    }
     }
   }
 
@@ -81,7 +83,7 @@
 
       .social-a {
         margin: 0px 5px;
-        color:$defaultBlack;
+        color: $defaultBlack;
         text-decoration: none;
         transition: all 0.5s ease-in;
       }
@@ -95,7 +97,10 @@
 }
 
 .active {
-  color: var(--hover-color);
+  color: var(--hover-color) !important;
+  font-weight: 500;
+  border-bottom: 2px solid var(--hover-color);
+  transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 900px) {

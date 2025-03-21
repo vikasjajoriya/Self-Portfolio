@@ -34,10 +34,7 @@ export default function Setting() {
   const handleMenuItemClick = (color) => {
     setSelectedColor(color);
     setSelectborderColor(color);
-    document.documentElement.style.setProperty(
-      "--scrollbar-thumb-color",
-      color
-    );
+    document.documentElement.style.setProperty("--scrollbar-thumb-color",color);
     setSelectedAccentColor(color);
     setSelectedHeadingColor(color);
     const root = document.documentElement;
@@ -54,29 +51,21 @@ export default function Setting() {
       </div>
       {showMenu && (
         <div className="menu">
-          <div
-            className="menu-item"
-            onClick={() => handleMenuItemClick("#FFE715")}
-          ></div>
-          <div
-            className="menu-item2"
-            onClick={() => handleMenuItemClick("#9FFF4C")}
-          ></div>
-          <div
-            className="menu-item3"
-            onClick={() => handleMenuItemClick("#01FFFF")}
-          ></div>
-          <div
-            className="menu-item4"
-            onClick={() => handleMenuItemClick("#C84B31")}
-          ></div>
+          {["#FFE715", "#9FFF4C", "#01FFFF", "#C84B31"].map((color, index) => (
+            <div
+              key={index}
+              className={`menu-item menu-item${index + 1}`}
+              onClick={(() => handleMenuItemClick(color))}
+              style={{ backgroundColor: color }}
+            ></div>
+          ))}
         </div>
       )}
-      <Navbar backgroundColor={selectedColor}/>
-      <Home backgroundColor={selectedColor} headingBackgroundColor={selectedHeadingColor}/>
-      <About backgroundColor={selectedColor}   borderColor={selectborderColor} />
+      <Navbar backgroundColor={selectedColor} />
+      <Home backgroundColor={selectedColor} headingBackgroundColor={selectedHeadingColor} />
+      <About backgroundColor={selectedColor} borderColor={selectborderColor} />
       <Resume backgroundColor={selectedColor} />
-      <Skills accentColor={selectedAccentColor} backgroundColor={selectedColor}/>
+      <Skills accentColor={selectedAccentColor} backgroundColor={selectedColor} />
       <Contact backgroundColor={selectedColor} />
     </div>
   );

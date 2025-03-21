@@ -45,31 +45,7 @@ export default function Skills({ accentColor, backgroundColor }) {
           className="progress-1"
         >
           <div className="html">
-            <span>HTML</span>
-            <span>90%</span>
-          </div>
-          <progress id="file" value="90" max="100" style={{ accentColor }} />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={controls}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="progress-1"
-        >
-          <div className="html">
-            <span>CSS</span>
-            <span>80%</span>
-          </div>
-          <progress id="file" value="80" max="100" style={{ accentColor }} />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={controls}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="progress-1"
-        >
-          <div className="html">
-            <span>JS</span>
+            <span>HTML / CSS / JS</span>
             <span>70%</span>
           </div>
           <progress id="file" value="70" max="100" style={{ accentColor }} />
@@ -81,10 +57,22 @@ export default function Skills({ accentColor, backgroundColor }) {
           className="progress-1"
         >
           <div className="html">
-            <span>React JS & Next JS</span>
-            <span>85%</span>
+            <span>React Js / Next Js</span>
+            <span>80%</span>
           </div>
-          <progress id="file" value="85" max="100" style={{ accentColor }} />
+          <progress id="file" value="80" max="100" style={{ accentColor }} />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={controls}
+          transition={{ duration: 0.5, delay: 1.0 }}
+          className="progress-1"
+        >
+          <div className="html">
+            <span>Git / Github</span>
+            <span>70%</span>
+          </div>
+          <progress id="file" value="70" max="100" style={{ accentColor }} />
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}

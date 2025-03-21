@@ -30,7 +30,7 @@
       background-color: $headingBackgroundColor;
       text-align: center;
       font-size: 20px;
-      font-weight: 100;
+      font-weight: 400;
       margin-bottom: 10px;
       border-radius: 5px ;
       padding: 10px 0px;
@@ -133,21 +133,17 @@
       }
     }
   }
-
   .down-button {
-    color:$defaultWhite;
-    background-color: $defaultBlack;
-    border: 2px solid $defaultBlack;
-    width: 105px;
-    height: 30px;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
     text-decoration: none;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
     justify-content: center;
     align-items: center;
     transition: all 0.7s ease;
+    border-radius: 5px;
+    padding: 7px 7px;
 
     &:hover {
       box-shadow: 0 5px 15px $defaultBlack;

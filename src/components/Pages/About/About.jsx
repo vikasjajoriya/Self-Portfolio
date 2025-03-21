@@ -1,10 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 export default function About({ backgroundColor, borderColor }) {
   const controls = useAnimation();
+  const [age, setAge] = useState(0);
+  const [experience, setExperience] = useState("0");
 
+  const calculateAge = (dob) => {
+    const birthDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    const dayDiff = today.getDate() - birthDate.getDate();
+    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+      age--;
+    }
+    return age;
+  };
+
+  const calculateExperience = (startYear) => {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth() + 1;
+    const yearsOfExperience = currentYear - startYear + currentMonth / 12;
+    return yearsOfExperience > parseInt(yearsOfExperience)
+      ? `${parseInt(yearsOfExperience)}+`
+      : `${parseInt(yearsOfExperience)}`;
+  };
   useEffect(() => {
+    setAge(calculateAge("1998-12-03"));
+    setExperience(calculateExperience(2023));
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const triggerPosition = 50; // Adjust this value to control when the animation triggers
@@ -49,7 +74,7 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="p-details"
           >
-            I am a results-driven Frontend Developer with 2 years of experience in designing and developing high-performance, scalable web applications. My expertise lies in React, Next.js, JavaScript, Context API, and REST API, where I focus on delivering optimized, user-centric solutions that enhance digital experiences.
+            I am a results-driven Frontend Developer with {experience} years of experience in designing and developing high-performance, scalable web applications. My expertise lies in React, Next.js, JavaScript, Context API, and REST API, where I focus on delivering optimized, user-centric solutions that enhance digital experiences.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -57,7 +82,7 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="p-details"
           >
-          Beyond coding, I enjoy playing online games, contributing to open-source projects, and attending tech meetups to stay updated with the latest industry trends.
+            Beyond coding, I enjoy playing online games, contributing to open-source projects, and attending tech meetups to stay updated with the latest industry trends.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 50 }}
@@ -65,12 +90,12 @@ export default function About({ backgroundColor, borderColor }) {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="p-details"
           >
-          Feel free to connect with me for collaborations or discussions on exciting web technologies! 🚀
+            Feel free to connect with me for collaborations or discussions on exciting web technologies! 🚀
           </motion.p>
         </div>
         <div className="my-age" style={{ backgroundColor }}>
           <div className="age-1">
-            <h1>26</h1>
+            <h1>{age}</h1>
             <h2 className="text-nowrap">Year's old</h2>
           </div>
         </div>
@@ -83,7 +108,7 @@ export default function About({ backgroundColor, borderColor }) {
         <div className="Email">
           <p className="Two">Email:</p>
           <p>
-            <a href="mailto:vikasjajoriya1998@gmail.com">
+            <a href="mailto:vikasjajoriya1998@gmail.com" className="text-decoration-none">
               vikasjajoriya1998@gmail.com
             </a>
           </p>
